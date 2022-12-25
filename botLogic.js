@@ -1,76 +1,55 @@
 // An array of possible responses
-
-
-let beginningOptions = userMenuOptions();
 let button_1 = document.getElementById("option-1");
 let button_2 = document.getElementById("option-2");
 let button_3 = document.getElementById("option-3");
-button_1.innerHTML = beginningOptions[0];
-button_2.innerHTML = beginningOptions[1];
-button_3.innerHTML = beginningOptions[2];
-function userMenuOptions() {
+let aboutOption = button_1.addEventListener('click', function() {
+  aboutQueries();
+});
+let repairOption = button_2.addEventListener('click', function() {
+  repairQueries();
+});
+let queryOption = button_3.addEventListener('click', function() {
+  selling_buyingQueries();
+});
+let chooseOne = document.getElementById("userChoices");
 
-  return [
-    "About PhoneSpot",
-    "Repairs",
-    "Selling or buying a device"
-  ];
-}
-
-var chooseOne = document.getElementById("userChoices");
-var choseAnOption = document.getElementById("")
 let whatTheyPick = chooseOne.addEventListener('click', function(event) {
   // Prevent the default behavior of the link
   event.preventDefault();
 });
 
+let beginningOptions = firstOptions();
+
+button_1.innerHTML = beginningOptions[0];
+button_2.innerHTML = beginningOptions[1];
+button_3.innerHTML = beginningOptions[2];
 
 
 
-
+function firstOptions() {
+  return [
+    "About PhoneSpot", "Repairs", "Selling or buying a device"
+  ]
+}
 function aboutQueries() {
-  console.log("You chose about");
+  beginningOptions = ["Who Are We At PhoneSpot?", "Directions To Our Store", "Contact Us!"]
+  button_1.innerHTML = beginningOptions[0];
+  button_2.innerHTML = beginningOptions[1];
+  button_3.innerHTML = beginningOptions[2];
+
 }
+
 function repairQueries() {
-  console.log("You chose repairs");
+  beginningOptions = ["Repairs For Computers/Laptops", "Repairs For Mobile Devices", "Repairs For Other Devices"]
+  button_1.innerHTML = beginningOptions[0];
+  button_2.innerHTML = beginningOptions[1];
+  button_3.innerHTML = beginningOptions[2];
 }
+
 function selling_buyingQueries() {
-  console.log("You chose selling or buying");
+  beginningOptions = ["Can I Sell Devices To PhoneSpot?", "What Does PhoneSpot Sell?", "Go Back"]
+  button_1.innerHTML = beginningOptions[0];
+  button_2.innerHTML = beginningOptions[1];
+  button_3.innerHTML = beginningOptions[2];
 }
-
-button_1.addEventListener('click', function() {
-  aboutQueries();
-});
-button_2.addEventListener('click', function() {
-  repairQueries();
-});
-button_3.addEventListener('click', function() {
-  selling_buyingQueries();
-});
-
-// // A function to handle the form submission and display the chatbot's response
-// function handleFormSubmit(event) {
-//   event.preventDefault(); // prevent the form from reloading the page
-
-//   // Get the user's message from the form input
-//   const message = document.getElementById("option-1").value;
-
-//   // // Use a random response from the responses array
-//   // const response = responses[Math.floor(Math.random() * responses.length)];
-
-//   // Display the chatbot's response
-//   const chatbox = document.getElementById("chatbox");
-//   chatbox.innerHTML += `<p><strong>Myron The Helper Bot:</strong> ${response}</p>`;
-// }
-
-// function answeringOptions(event) {
-//   event.preventDefault();
-//   button_1.innerHTML = beginningOptions[0];
-//   button_2.innerHTML = beginningOptions[1];
-//   button_3.innerHTML = beginningOptions[2];
-//   console.log(button_1);
-// }
-// Add an event listener to the form to handle form submissions
-const form = document.getElementById("chat-form");
-//form.addEventListener("submit", passingOptions);
 
